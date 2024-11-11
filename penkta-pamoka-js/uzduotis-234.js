@@ -13,6 +13,8 @@ console.log(amziausPatikra);
 // Raskite siu pazymiu vidurki. Patikrinkite ar vidurkis teigiamas(daugiau arba lygu 5-iems),
 // jei taip - isveskite "vidurkis teigiamas".
 
+const teigiamasVidurkis = 5;
+
 let pazymysMatematika = 8;
 
 let pazymysDaile = 9;
@@ -21,9 +23,9 @@ let pazymysIstorija = 6;
 
 let moksluVidurkis = (pazymysMatematika + pazymysDaile + pazymysIstorija) / 3;
 
-console.log(moksluVidurkis.toFixed(0));
+console.log(moksluVidurkis.toFixed(1));
 
-if (moksluVidurkis >= 5) {
+if (moksluVidurkis >= teigiamasVidurkis) {
   console.log('vidurkis teigiamas');
 } else {
   console.log('vidurkis neigiamas');
@@ -55,10 +57,12 @@ console.log(skaicius ** 2 / 2);
 // Isveskite siu dvieju skaiciu suma, skirtuma, sandauga, dalmeni.
 
 if (skaicius % 7 === 0) {
-    console.log('skaicius yra tinkamas kitiems veiksmams');
-  } else {
-    console.log('skaicius nera tinkamas kitiems veiksmas ir reikia naujo skaiciaus');
-  }
+  console.log('skaicius yra tinkamas kitiems veiksmams');
+} else {
+  console.log(
+    'skaicius nera tinkamas kitiems veiksmas ir reikia naujo skaiciaus'
+  );
+}
 
 let skaiciusKitas = 98;
 

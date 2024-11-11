@@ -76,22 +76,18 @@ if (r > 0) {
 // 6.4) Jei pazymys yra lygus arba didesnis nei 5, isvesti "patenkinamai".
 // 6.5) Jei pazymys yra mazesnis uz 5, isvesti "egzaminas neislaikytas".
 
-let pazymysPirmas = 6;
-let pazymysAntras = 8;
-let pazymysTrecias = 3;
+let pazymys = 6;
 
-let vidurkis = (pazymysPirmas + pazymysAntras + pazymysTrecias) / 3;
+console.log(pazymys.toFixed(0));
 
-console.log(vidurkis.toFixed(0));
-
-if (vidurkis >= 10) {
+if (pazymys >= 10) {
   console.log('Puiku');
-} else if (vidurkis >= 9) {
+} else if (pazymys >= 9) {
   console.log('Labai gerai');
-} else if (vidurkis >= 7) {
+} else if (pazymys >= 7) {
   console.log('Gerai');
-} else if (vidurkis >= 5) {
+} else if (pazymys >= 5) {
   console.log('Patenkinamai');
 } else {
-    console.log('Egzaminas neislaikytas');
+  console.log('Egzaminas neislaikytas');
 }
