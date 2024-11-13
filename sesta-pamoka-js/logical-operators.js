@@ -1,6 +1,7 @@
 // Loginiai operatoriai &&, ||, !
 
-// && - "ir" salyga (and and)
+// && - "ir" salyga (and and).
+// ziuri ar abi salygos yra teisingos.
 // false && false = false;
 // false & true = false; (nes pirmasis yra false, tada antrojo net neziures!)
 // true && false = false; (nes neatitinka antros salygos! abi salygos turi buti teisingos.)
@@ -46,11 +47,31 @@ if (skaicius > 0 && skaicius <= 100) {
   console.log('skaicius patenka tarp 100 ir 1000');
 }
 
+// && pvz 5
+const x = 1;
+const z = 2;
+
+if (x + 1 === 3 && z + 1 === 0) {
+  console.log('abu teisingi');
+} else {
+  console.log('abu neteisingi');
+}
+
+// && pvz 6
+const arPrisijungusi = true;
+const arVipNare = true;
+
+if (arPrisijungusi === arVipNare) {
+  console.log('abu teisingi');
+} else {
+  console.log('abu neteisingi');
+}
+
 // || - "arba" salyga, reiskia, kad turi atitikti bent viena salyga.
 // false || false = false;
 // false || true = true;
 // true || true = true;
-// true || true = true;
+// true || true = true; (?)
 
 // || pvz 1
 const c = 1;
@@ -87,7 +108,7 @@ if ((UserIsLoggedIn && UserIsAdmin) || age === 21) {
 // !true = false;
 // !false = true;
 
-// ! pvz
+// ! pvz1
 const isLoggedIn = false;
 
 if (!isLoggedIn) {
@@ -107,3 +128,15 @@ if (arTuriBilieta) {
 } else if (!arTuriBilieta && !yraVipNarys) {
   console.log('Tu neturi nei bilieto nei esi vip narys.');
 }
+
+// pvz kitas
+let nuolaida = 0;
+const arVipas = true;
+
+if (arVipas) {
+  nuolaida = 50;
+} else { // sios eilutes galima ir nerasyti, nes yra let=0
+  nuolaida = 0;
+}
+
+console.log(`Zmogus gauna ${nuolaida}% nuolaida`)

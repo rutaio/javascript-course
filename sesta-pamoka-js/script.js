@@ -31,3 +31,13 @@ if (arPrisijunges) {
 } else {
   console.log('Tu neprisijunges');
 }
+
+// Math.max funkcijos pvz
+
+let a = 5;
+let b = 9;
+let c = 3;
+
+let didziausiasSkaicius = Math.max(a, b, c);
+
+console.log(didziausiasSkaicius);
