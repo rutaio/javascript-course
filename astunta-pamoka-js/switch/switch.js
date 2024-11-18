@@ -1,5 +1,5 @@
 // SWITCH palyginimo salyga arba palyginimo operatorius.
-// leidzia palyginti kintamaji su daugybe skirtingu reiksmiu.
+// leidzia palyginti viena salyga arba viena kintamaji su daugybe skirtingu reiksmiu.
 // jis nekonvertuoja duomenu tipu.
 // skirtas patikrinti to paties kintamojo reiksmes.
 // IF ELSE buvo skirtas tikrinti keliu kintamuju reiksmes.
@@ -98,4 +98,22 @@ switch (veiksmas) {
     break;
   default:
     console.log('nezinomas veiksmas');
+}
+
+// pvz 5
+
+let a = 6;
+
+switch (a) {
+  case 3:
+    console.log('Skaicius', a);
+    break;
+  case 4:
+    console.log('Skaicius', a);
+    break;
+  case '6':
+    console.log('Skaicius', a);
+    break;
+  default:
+    console.log('neegizstuoja');
 }

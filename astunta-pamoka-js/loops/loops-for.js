@@ -1,5 +1,8 @@
 // Loops - tai yra cicklai, kai norime funkcija paleist daug kartu.
+// Ciklas iskviecia ta koda, kad pakartoti tam tikra funkcija.
+
 // Yra keli loops: for, while, do while, for in, for of
+
 // "For" ciklas yra naudojamas, kai yra zinoma, kiek kartu jis bus naudojamas.
 // For ciklo sintakse:
 // for (kintamasis; salyga; operacija) { kodas }
