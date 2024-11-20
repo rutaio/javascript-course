@@ -1,6 +1,6 @@
 // WHILE loop (ciklas)
 // Vykdome skaičiavimus ir norime juos vykdyti iki kol pasieksime tinkamą rezultatą.
-// Suks ta ciklo rata, kol ta salyga yra teisinga
+// Suks ta ciklo rata, kol ta salyga yra teisinga, kol ja ispildys
 
 // pvz 1
 
@@ -27,5 +27,6 @@ let prekiuKiekis = 30;
 
 while (prekiuKiekis > 0) {
   console.log('Prekiu kiekis: ', prekiuKiekis);
-  prekiuKiekis--;
+  prekiuKiekis--; // mes turime pasakyti, kad sistema sumazintu priekiu kiekis
 }
+

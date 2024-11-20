@@ -43,7 +43,7 @@ console.log(sum); // 233168 <-- console log rasome atskirai, kai norime pamatyt 
 let result = 0;
 
 for (let i = 1; i < 10; i++) {
-  if (i % 3 == 0 || i % 5 == 0) {
+  if (i % 3 === 0 || i % 5 === 0) {
     result += i;
   }
 }
