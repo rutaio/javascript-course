@@ -1,8 +1,13 @@
-// Array = Masyvas padeda sugrupuoti susijusius duomenis.
+// Array = Masyvas yra vieta, kur galim sugrupuoti duomenis.
+// Masyvas rasomas kaip kintamasis.
+// Masyva galime ideti net ir i pati console.log, bet dazniau masyvas bus priskirtas t.t. kintamajam.
+
 // Masyvus galima įsivaizduoti kaip:
 // Masyvas yra specialaus tipo kintamasis, kuris gali saugoti daugiau nei vieną reikšmę.
 // Masyvas apjungia kelis skirtingus kintamuosius į vieną vietą.
 // Masyvas padeda sugrupuoti susijusius duomenis.
+// Masyve gali buti bet koks duomenu tipas: skaicius, stringai, bolean (true/false), netgi undefined ir null.
+// Bet stengiames nemiksuoti duomenu tipu!
 
 // Backend'as visada mums atsius duomenis masyvo formatu.
 // ant masyvo galime naudoti ir ciklus, kad apdoroti duomenis mum reikiamu budu.
