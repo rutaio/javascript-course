@@ -46,7 +46,7 @@ if (masyvas) {
 
 let masyvas2 = [];
 
-console.log(masyvas.length);
+console.log(masyvas2.length);
 
 // pvz 5
 
