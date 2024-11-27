@@ -78,7 +78,7 @@ for (let i = 0; i < numbers.length; i++) {
 
 console.log('Suma: ', sum);
 
-average = sum / numbers.length; // neteisinga formule
+average = sum / numbers.length; 
 
 console.log('Vidurkis: ', average);
 

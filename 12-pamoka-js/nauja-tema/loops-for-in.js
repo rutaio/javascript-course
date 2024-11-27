@@ -27,4 +27,14 @@ for (let index in list) {
 // tada grazins reiksmes..
 
 // pvz 3
+// indeksai yra grazinami kaip stringai,
+// o stringai nedaro matematikos!
+// sita uzduotis ir parodo, kad realybeje tokios situacijos tikriausiai nebus!
+let skaiciai = [1, 2, 3];
+let sum = 0;
 
+for (const skaicius in skaiciai) {
+  sum += skaicius;
+}
+
+console.log(sum);

@@ -79,9 +79,38 @@ let pirmas_studentas = [7, 8, 9, 10];
 let antras_studentas = [9, 8, 9, 6];
 
 for (const pazymys of pirmas_studentas) {
-    console.log('Pirmo studento pazymys:', pazymys);
+  console.log('Pirmo studento pazymys:', pazymys);
 }
 
 for (const pazymys of antras_studentas) {
-    console.log('Antro studento pazymys:', pazymys);
+  console.log('Antro studento pazymys:', pazymys);
 }
+
+// pvz 8
+
+let skaiciai = [1, 2, 3];
+let sum = 0;
+
+for (const skaicius of skaiciai) {
+  sum += skaicius;
+}
+
+console.log(sum);
+
+// pvz 9
+
+let numbers = [-1, -2, -3, 1, 2, 3];
+
+let teigiami_numbers = [];
+let neigiami_numbers = [];
+
+for (const number_Kazkoks of numbers) {
+  if (number_Kazkoks > 0) {
+    teigiami_numbers.push(number_Kazkoks);
+  } else {
+    neigiami_numbers.push(number_Kazkoks);
+  }
+}
+
+console.log('Teigiami skaiciai yra: ', teigiami_numbers);
+console.log('Neigiami skaiciai yra: ', neigiami_numbers);
