@@ -132,7 +132,7 @@ console.log(`Kodo failai yra sie: ${codeFiles}`);
 
 let markes = ['jeep', 'minicooper', 'audi', 'bmw'];
 
-for (automobilis of markes) {
+for (let automobilis of markes) {
   console.log(`${automobilis.toUpperCase()} - ${automobilis.length} raides`);
 }
 
@@ -143,7 +143,7 @@ for (automobilis of markes) {
 
 let klaidos = ['ui87', 'sys12'];
 
-for (kodas of klaidos) {
+for (let kodas of klaidos) {
   if (kodas === 'ui87') {
     console.log('Grafines sasajos klaida navigacijoje');
   } else if (kodas === 'sys12') {
@@ -171,13 +171,25 @@ for (let indeksas in kodai) {
 let sandelys = [408, 666, 936, 135, 3223];
 let parduotasPrekesKiekisPerDiena = 5;
 
-for (preke of sandelys) {
+for (let preke of sandelys) {
   preke -= parduotasPrekesKiekisPerDiena;
   console.log(
     `Dabartinis prekes likutis: ${preke}, uzteks ${(
       preke / parduotasPrekesKiekisPerDiena
     ).toFixed()} dienu`
   );
+}
+
+// 24. b) kitas variantas
+
+let sandelioLikutis = [408, 666, 936, 135, 3223];
+let perDienaPerkama = 5;
+
+for (let liko of sandelioLikutis) {
+  liko -= perDienaPerkama;
+  let dienuUzteks = Math.ceil(liko / perDienaPerkama);
+
+  console.log(`${liko} vnt. prekes uzteks mazdaug ${dienuUzteks}`);
 }
 
 // 25. Susikurkite masyva studento pazymiams saugoti. Uzpildykite si masyva atsitiktinai sugeneruotais pazymiais.
@@ -189,15 +201,86 @@ let studentoPazymiai = [4, 6, 9, 10, 6];
 let suma = 0;
 let pazymiuVidurkis = 0;
 
-for (pazymys of studentoPazymiai) {
+for (let pazymys of studentoPazymiai) {
   suma += pazymys;
   if (pazymys < 5) {
     console.log(`Neigiami pazymiai: ${pazymys}`);
-  } else if (pazymys >= 5) {
-    console.log(`Teigiami pazymiai: ${pazymys}`);
   }
 }
 
 pazymiuVidurkis = suma / studentoPazymiai.length;
 
 console.log(`Vidurkis: ${pazymiuVidurkis}`);
+
+// 25.b) kitas variantas
+
+let pazymiaiB = Array.from(
+  { length: 10 },
+  () => Math.floor(Math.random() * 10) + 1
+); // sukurk masyva su 10 elementu, kurie tures random skaicius
+
+let sumaB = 0;
+let neigiamuKiekis = 0;
+
+for (let pazymysB of pazymiaiB) {
+  sumaB += pazymysB;
+  if (pazymysB < 5) {
+    neigiamuKiekis++;
+  }
+}
+
+let vidurkisB = sumaB / pazymiaiB.length;
+
+console.log('Vidurkis: ', vidurkisB.toFixed());
+console.log('Neigiamu pazymiu kiekis: ', neigiamuKiekis);
+
+// 26. Susikurkite du pazymiu masyvus, kur vienas masyvas reiks vieno studento pazymius, kitas masyvas kito studento pazymius.
+// Raskite kiekvieno studento pazymiu vidurki.
+// Isveskite abieju studentu pazymius, vidurkius ir nurodykite kuris studentas turi didesni vidurki.
+
+let pazymiaiJono = [5, 9, 2, 9, 10];
+let pazymiaiSaules = [4, 7, 9, 4, 9];
+
+let sumaJono = 0;
+let sumaSaules = 0;
+
+for (let pazymysJono of pazymiaiJono) {
+  sumaJono += pazymysJono;
+  console.log(pazymysJono);
+}
+
+vidurkisJono = sumaJono / pazymiaiJono.length;
+console.log('Jono vidurkis: ', vidurkisJono);
+
+for (let pazymysSaules of pazymiaiSaules) {
+  sumaSaules += pazymysSaules;
+  console.log(pazymysSaules);
+}
+
+vidurkisSaules = sumaSaules / pazymiaiSaules.length;
+console.log('Saules vidurkis: ', vidurkisSaules);
+
+if (vidurkisJono > vidurkisSaules) {
+  console.log('Jono vidurkis didesnis');
+} else if (vidurkisJono < vidurkisSaules) {
+  console.log('Saules vidurkis didesnis');
+} else {
+  console.log('Abu vidurkiai lygus');
+}
+
+// 27.Susikurkite masyva norimiems zodziams saugoti. Uzpildykite si masyva duomenimis.
+// I kita masyva atrinkite tuos Zodzius, kurie yra trumpi (sudaro maziau nei 5 raides).
+// Isveskite pradinius duomenis ir atrinktus.
+
+let words = ['saule', 'menulis', 'zvaigzdes', 'visata', 'zeme'];
+
+let shortWords = [];
+
+for (let oneWord of words) {
+  if (oneWord.length <= 5) {
+    shortWords.push(oneWord);
+  }
+}
+
+console.log(`Atrinkti duomeys: ${shortWords}`);
+console.log(`Pradiniai duomenys: ${words}`);
