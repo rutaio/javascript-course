@@ -2,6 +2,7 @@
 // Objektas paprastai naudojamas kai norime sugrupuoti duomenis
 // apie vieną esybę (object key), pavyzdžiui, vieno studento duomenys, vienos knygos duomenys ir pan.
 // Objects - objektai laiko susijusia info apie kokia nors esybe
+// Kuo Objektai skiriasi nuo Masyvu? Butent apie sita esybe..
 
 // pvz 1
 // objekto kintamajame yra raktai su reiksmemis
@@ -25,9 +26,10 @@ const automobilis = {
   spalva: 'raudona',
   duruKiekis: 4,
   kuroTipas: 'benzinas',
+  pravardes: ['Peleda', 'Ryklys', 'Penktukas'],
 };
 
-console.log(automobilis);
+console.log(automobilis.pravardes[1]); // grazins antraji nari 
 
 const automobilis2 = {
   marke: 'Jeep',
