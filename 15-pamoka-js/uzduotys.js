@@ -114,10 +114,9 @@ console.log(
 // Paskaiciuokite ir isveskite kiek vidutiniskai per metus yra nuvaziaves automobilis (jeigu viso nuvaziavo 300 kilometru, o automobiliui yra 2 metai, tai per metus vidutiniskai gaunasi 150 km.).
 
 // PVZ, kaip susikurti tuscia objekta ir i ji ipushinti duomenis?
-const masina = {
-};
+const masina = {};
 
-console.log(masina); // grazina tuscia objekta, nes duomenys nera ipushinti 
+console.log(masina); // grazina tuscia objekta, nes duomenys nera ipushinti
 
 masina.marke = 'bmw';
 masina.modelis = 'kazkoks';
@@ -142,3 +141,92 @@ let vidutineRida = masina.rida / autoAmzius;
 console.log(
   `Vidutiniskai si masina per metus yra nuvaziavusi po ${vidutineRida.toFixed()} km`
 );
+
+// 7. Susikurkite obiekta informacijai apie knygyna saugoti.
+// I si objekta sudekite tokias savybes su reiksmèmis: pavadinimas, adresas, plotas (kv. m.), kiek turi knygu, darbo valandos, ar atidarytas.
+// Isveskite sio knygyno objekto raktus su reiksmemis.
+// Tuomet isveskite visas knygyno savybes, kuriu reiksmes yra ne string tipo (plotas, kiek turi knygu ir pan.).
+
+let knygynas = {
+  pavadinimas: 'Knygu Krautuvele',
+  adresas: 'Vilnius',
+  plotas: 100,
+  knyguKiekis: 10000,
+  darboValandos: 8,
+  arAtidarytas: true,
+};
+
+// Isveskite sio knygyno objekto raktus su reiksmemis:
+for (const index in knygynas) {
+  console.log(`${index}: ${knygynas[index]}`);
+}
+
+// Tuomet isveskite visas knygyno savybes, kuriu reiksmes yra ne string tipo (plotas, kiek turi knygu ir pan.):
+for (value in knygynas) {
+  if (typeof knygynas[value] !== 'string') {
+    console.log(`Grazina reiksmes, kurios yra nestringai: ${value}`);
+  }
+}
+
+// rodyti tik boolean:
+for (value in knygynas) {
+  if (typeof knygynas[value] === 'boolean') {
+    console.log(`Grazina reiksmes, kurios yra tik boolean: ${value}`);
+  }
+}
+
+// 8. Susikurkite du objektus, dvieju studentu informacijai saugoti.
+// Abiejuose objektuose sudekite sias savybes su reiksmemis: vardas ir pavarde, studiju programos pavadinimas, pazymiai.
+// Raskite abieju studentu pazymiu vidurkius.
+// Isveskite abieju studentu informacija, bei pazymiu vidurkius.
+// Raskite ir isveskite, kurio studento pazymiu vidurkis yra didesnis ir isveskite jo varda su pavarde.
+
+let studentas1 = {
+  vardas: 'Saule',
+  pavarde: 'Saulene',
+  programa: 'Istoriju Pasakojimas',
+  pazymiai: [8, 9, 10, 5],
+};
+
+let studentas2 = {
+  vardas: 'Menule',
+  pavarde: 'Menulene',
+  programa: 'Dizainas',
+  pazymiai: [5, 7, 6, 7],
+};
+
+// Raskite abieju studentu pazymiu vidurkius:
+// pirmas studentas
+let suma1 = 0;
+
+for (pazymys1 of studentas1.pazymiai) {
+  suma1 += pazymys1;
+}
+
+let vidurkis1 = (suma1 / studentas1.pazymiai.length).toFixed();
+
+// antras studentas
+let suma2 = 0;
+
+for (pazymys2 of studentas2.pazymiai) {
+  suma2 += pazymys2;
+}
+
+let vidurkis2 = (suma2 / studentas2.pazymiai.length).toFixed();
+
+// Isveskite abieju studentu informacija, bei pazymiu vidurkius.
+console.log(`Pirmo studento info: ${JSON.stringify(studentas1)}`);
+console.log(`Antro studento info: ${JSON.stringify(studentas2)}`);
+console.log(`Pirmo studento pazymiu vidurkis: ${vidurkis1}`); //
+console.log(`Antro studento pazymiu vidurkis: ${vidurkis2}`);
+
+// Raskite ir isveskite, kurio studento pazymiu vidurkis yra didesnis ir isveskite jo varda su pavarde.
+if (vidurkis1 > vidurkis2) {
+  console.log(`${studentas1.vardas} ${studentas1.pavarde}`);
+} else if (vidurkis1 < vidurkis2) {
+  console.log(`${studentas2.vardas} ${studentas2.pavarde}`);
+} else {
+  console.log('abu vidurkiai lygus');
+}
+
+
