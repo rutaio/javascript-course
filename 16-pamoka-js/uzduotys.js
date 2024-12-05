@@ -108,6 +108,7 @@ generateSum();
 // 6. Sukurkite ir iskvieskite funkcija, kurioje kintamuosiuose butu saugoma informacija apie policininka (vardas, pavarde, amzius, alga, etatas, specializacija).
 // Isveskite sia informacija suformatuotai (pavydziui iterpkite ¡ sakini, ar isveskite sarasu ar pan.).
 
+// a) budas:
 function storePolicemanInfo() {
   let vardas = 'Robotas';
   let pavarde = 'Policininkas';
@@ -122,3 +123,39 @@ function storePolicemanInfo() {
 }
 
 storePolicemanInfo();
+
+// b) kitas budas:
+function showOfficerInfo(
+  vardas,
+  pavarde,
+  amzius,
+  alga,
+  etatas,
+  specializacija
+) {
+  let sakinys = `sveiki, mano vardas ir pavarde yra ${vardas} ${pavarde}, mano amzius yra ${amzius}, uzdirbu ${alga}, mano etatas yra ${etatas}, o mano specializacija yra ${specializacija}`;
+
+  return sakinys;
+}
+
+console.log(
+  showOfficerInfo('Vardas', 'Pavardenis', 30, 2000, 'pilnas', 'kriminalistas')
+);
+
+// c) dar kitas budas:
+function showPolicemanCard() {
+  const officer = {
+    vardas: 'Robotas',
+    pavarde: 'Policininkas',
+    amzius: 100,
+    alga: 9000,
+    etatas: 'patrulis',
+    specializacija: 'apsauga',
+  };
+
+  return officer;
+}
+
+console.log(showPolicemanCard().vardas);
+console.log(showPolicemanCard().pavarde);
+

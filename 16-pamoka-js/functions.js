@@ -1,6 +1,12 @@
-// FUNKCIJOS (functions) skirtos atlikti veiksmus.
+// FUNKCIJOS (functions) skirtos izoliuoti dali kodo, iskvietus ta koda, ji ivyks.
 // Rasomos su ()
 // Funkcijos rasomos liepiamaja nuosaka (veiksmazodis su Camel Case: vienaMazoji ir kita didzioji raide)
+
+// 1) ima argumentus
+// 2) neima argumentu
+
+// a) galim grazint reiksmes su RETURN
+// b) arba ne
 
 // Funkcija pati savavališkai nevykdo jokio kodo, todėl norint, kad ji atliktų kokį nors darbą - reikės ją iškviesti.
 // Sudeliojame logika, paleisime tada, kai reikes
@@ -70,8 +76,74 @@ if (laikas === '18:00') {
 let skaicius = 10;
 
 function isveskPadaugintaSkaiciu() {
-    console.log(skaicius * 2); // funkcija gali iseiti is savo ribu ir pamatyti kintamuosiuos, kurie yra isoreje
-} 
+  console.log(skaicius * 2); // funkcija gali iseiti is savo ribu ir pamatyti kintamuosiuos, kurie yra isoreje
+}
 
 isveskPadaugintaSkaiciu();
 
+// pvz 8 - galime paduoti kiek tik norime argumentu, bet norma yra 4 argumentai vienai funkcijai.
+function addNumbers(a, b) {
+  return `Tu man padavei du argumentus: 1) ${a} ir ${b}`;
+}
+
+let sum = addNumbers(5, 5); // eiliskumas, kaip mes paduodame argumentus yra svarbus
+
+console.log(sum);
+
+// pvz 9
+// i funkcijos vidu galime prisirasyti kintamuju, bet jie veiks tik viduje
+function pridekSkaicius(x, y) {
+  let sum = x + y;
+
+  if (sum > 10) {
+    return 'suma didesne uz 10';
+  } else {
+    return 'suma mazesne uz 10';
+  }
+}
+
+let atsakymas = pridekSkaicius(5, 6);
+
+console.log(atsakymas);
+
+// pvz 10 - kaip parasyti funkcija, kuri grazina stringus?
+function returnString() {
+  return '';
+}
+
+console.log(returnString());
+
+// pvz 11 - kaip parasyti funkcija, kuri grazina stringa masyvo viduje?
+function returnArrayString() {
+  return ['adas'];
+}
+
+console.log(returnArrayString());
+
+// pvz 12 - kaip parasyti funkcija, kuri grazinti objekta masyve?
+function showOfficerInformation() {
+  const officer = {
+    vardas: 'Edgaras',
+    pavarde: 'Pavarde',
+    amzius: 30,
+    statusas: 'aktyvus',
+  };
+
+  return [officer];
+}
+
+console.log(showOfficerInformation());
+
+// pvz 13 - paredaguota funkcija:
+const officer = {
+  vardas: 'Edgaras',
+  pavarde: 'Pavarde',
+  amzius: 30,
+  statusas: 'aktyvus',
+};
+
+function addObjectToArray(object) {
+  return [object];
+}
+
+console.log(addObjectToArray(officer));
