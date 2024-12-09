@@ -92,6 +92,56 @@ console.log(getCarInfo('Jeep', 'Kazkoks', 1999, 1));
 console.log(getCarInfo('BMW', 'Geriausias', 2009, 0.5));
 console.log(getCarInfo('Minicooper', 'Vienetinis', 2020, 2));
 
+// kitas b variantas:
+
+function showCarInfo(make, model, year, engine) {
+  console.log('Automobilio duomenys:');
+  console.log('Marke:', make);
+  console.log('Modelis:', model);
+  console.log('Gamybos metai:', year);
+  console.log('Variklio turis:', engine);
+}
+
+showCarInfo('Totota', 'Prius', 2000, 1.6);
+
+// kitas c variantas:
+
+const bmw = {
+  make: 'BMW',
+  model: '540',
+  year: 2022,
+  engine: 3.0,
+}
+
+function showCarInfo() {
+  console.log('Automobilio duomenys:');
+  console.log('Marke:', make);
+  console.log('Modelis:', model);
+  console.log('Gamybos metai:', year);
+  console.log('Variklio turis:', engine);
+}
+
+showCarInfo(bmw.make, bmw.model, bmw.year, bmw.engine);
+
+// kitas d variantas:
+
+const Jeep = {
+  make: 'RAM',
+  model: 'kazkoks',
+  year: 2022,
+  engine: 3.0,
+}
+
+function showcaseCarInfo(car) {
+  console.log('Automobilio duomenys:');
+  console.log('Marke:', car.make);
+  console.log('Modelis:', car.model);
+  console.log('Gamybos metai:', car.year);
+  console.log('Variklio turis:', car.engine);
+}
+
+showcaseCarInfo(Jeep);
+
 // 12. Sukurkite funkcija sumai skaiciuoti, si funkcija per arguments turetu gauti du skaicius, bei isvesti pati veiksma kartu su atsakymu (pvz 7 + 5 = 12).
 // Sukurkite tokias pacias funkcijas skirtumui, sandaugai ir dalmeniui rasti.
 // Sukurkite dar viena funkcija, kuri sugeneruotu du atsitiktinius skaicius, bei iskviestu kitas 4 funkcijas, perduodant joms sugeneruotus skaicius.
@@ -129,18 +179,19 @@ function calculateDalmuo(x, y) {
 
 console.log(calculateDalmuo(2, 5));
 
-// atsitiktiniai skaiciai:
-function makeRandomNumber() {
+// PERZIURETI IR PRATRINTI: 
+// 2 atsitiktiniai skaiciai:
+ function makeRandomNumber() {
   let atsitiktiniaiSkaiciai = 0;
   for (let i = 0; i < 2; i++) {
-    let atsitiktiniaiSkaiciai = Math.floor(Math.random() * 100);
+    let atsitiktiniaiSkaiciai = Math.floor(Math.random() * 100) + 1;
     console.log(atsitiktiniaiSkaiciai);
   }
 
   return atsitiktiniaiSkaiciai; // KLAUSIMAS - kodel grazina 2 skaicius ir 0?
-}
+ }
 
-console.log(makeRandomNumber());
+ console.log(makeRandomNumber());
 
 // 4 funkcijos pasiima atsitiktinius skaicius:
 calculateSum(makeRandomNumber());
@@ -150,4 +201,60 @@ calculateDalmuo(makeRandomNumber());
 
 // Sia bendraja funkcija iskvieskite keleta kartu:
 // hmm? :D
+
+
+// kitas budas:
+function makeRandomNumber() {
+  const a = Math.floor(Math.random() * 100) + 1;
+  const b = Math.floor(Math.random() * 100) + 1;
+
+  console.log(`Sugeneruoti random skaiciai: a = ${a} b = ${b}`);
+
+  calculateSum(a, b);
+  calculateSkirtumas(a, b);
+  calculateSandauga(a, b);
+  calculateDalmuo(a, b);
+}
+
+makeRandomNumber();
+
+// kitas budas:
+
+function sudek(a, b) {
+  let suma = a + b;
+  console.log(`${a} + ${b} = ${suma}`);
+}
+
+function atimk(a, b) {
+  let skirtumas = a - b;
+  console.log(`${a} - ${b} = ${skirtumas}`);
+}
+
+function daugink(a, b) {
+  let sandauga = a * b;
+  console.log(`${a} * ${b} = ${sandauga}`);
+}
+
+function dalink(a, b) {
+  let dalmuo = a / b;
+  console.log(`${a} / ${b} = ${dalmuo.toFixed(2)}`);
+}
+
+function sugeneruokRandomSkaiciu() {
+  return Math.floor(Math.random() * 100 + 1);
+}
+
+function atvaizduokSkaicius() {
+  let a = sugeneruokRandomSkaiciu();
+  let b = sugeneruokRandomSkaiciu();
+
+  sudek(a, b);
+  atimk(a, b);
+  daugink(a, b);
+  dalink(a, b);
+}
+
+atvaizduokSkaicius();
+
+
 
