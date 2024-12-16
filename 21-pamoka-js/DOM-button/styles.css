@@ -1,0 +1,15 @@
+.green-box {
+    color: red;
+    border: 1px dashed green;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+  }
+  
+  .blue-box {
+    color: blue;
+    border: 3px dashed green;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+  }
