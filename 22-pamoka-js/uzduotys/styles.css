@@ -1,0 +1,32 @@
+.palete {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.palete .spalvosDeze {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.pirma-deze {
+  background: #ff5733;
+}
+
+.antra-deze {
+  background: #33fe56;
+}
+
+.trecia-deze {
+  background: #3257ff;
+}
+
+.ketvirta-deze {
+  background: #f4ff32;
+}
+
+.penkta-deze {
+  background: #ff32a6;
+}

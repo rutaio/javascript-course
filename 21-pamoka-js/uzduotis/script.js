@@ -18,7 +18,7 @@ button.addEventListener('click', function () {
   // sukuriu div tag'a, kad jame parodytu output reiksmes:
   const container = document.createElement('div');
 
-  // siam div'ui uzdedame borderi su stiliumi, kuriame bus visas turinys iremintas is output:
+  // siam div'ui uzdedame dezute su stiliumi, kurioje bus visas turinys iremintas is output:
   container.style.border = '1px solid grey';
   container.style.borderRadius = '10px';
   container.style.marginTop = '5px';
