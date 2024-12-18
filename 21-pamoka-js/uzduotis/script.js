@@ -32,6 +32,7 @@ button.addEventListener('click', function () {
   <button id="btn-delete">DELETE</button> 
  `;
 
+ // susikuriu DELETE mygtuka auksciau innerHTML'e, bet cia apsirasau, kad ji paspaudus, jis istrintu turini:
   container.querySelector('#btn-delete').addEventListener('click', function () {
     container.remove();
   });
