@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepykla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="block-wrapper">
+        <h1>Kepykla.lt 🍞</h1>
+    </header>
+    <div class="info-wrapper block-wrapper">
+        <h2>Pradinė informacija</h2>
+        <div class="input-wrapper">
+            <label for="employee-count">Darbuotojų skaičius:</label>
+            <input type="number" min="0" step="1" value="0" id="employee-count">
+            <span class="error">Darbuotojų skaičius negali būti neigiamas.</span>
+        </div>
+        <div class="input-wrapper">
+            <label for="loaves-per-employee">Duonos kepalų per dieną (vienas darbuotojas):</label>
+            <input type="number" min="0" step="1" value="0" id="loaves-per-employee">
+        </div>
+        <div class="input-wrapper">
+            <label for="order-count">Reikalingi Duonos kepalai:</label>
+            <input type="number" min="0" step="1" value="0" id="order-count">
+        </div>
+        <button id="calculate">Skaičiuoti</button>
+        <button id="reset">Iš naujo</button>
+    </div>
+    <div class="calc-wrapper block-wrapper">
+        <h2>Skaičiavimai</h2>
+        <div id="results">
+            <p>Kol kas nieko nėra.</p>
+        </div>
+    </div>
+</body>
+</html>

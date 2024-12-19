@@ -45,3 +45,5 @@ card.append(year);
 
 // Idedame kortele i konteineri:
 container.append(card);
+
+// Kitas budas padaryti tai, ka daro Create Element yra InnerHTML 
