@@ -18,46 +18,59 @@ const uzsakymasInput = document.getElementById('order-count');
 const calculateBtn = document.getElementById('calculate');
 const resetBtn = document.getElementById('reset');
 
+const resultContainer = document.getElementById('results');
+
 // Apsirasau funkcijas, kad paspaudus mygtuka padarytu skaiciavimus ir parodytu juos atsakymo laukelyje:
 calculateBtn.addEventListener('click', function () {
+  // pasiverciame INPUT reiksmes is STRING i NUMBERS:
+  const darbuotojaiInputNumber = Number(darbuotojaiInput.value);
+  const kepalaiInputNumber = Number(kepalaiInput.value);
+  const uzsakymasInputNumber = Number(uzsakymasInput.value);
+
   // isivedu kintamaji, pagal kuri bus aisku, koks atsakymas turi buti parodytas:
-  let kiekKepyklaIskepsKepalu = darbuotojaiInput * kepalaiInput;
+  let kiekKepyklaIskepsKepalu = darbuotojaiInputNumber * kepalaiInputNumber;
 
   // apsirasau funkcija, kad kai vartotojas irasys reiksmes i visus siuos laukus:
-  if (!darbuotojaiInput.value && !kepalaiInput.value && !uzsakymasInput.value) {
+  if (!darbuotojaiInputNumber && !kepalaiInputNumber && !uzsakymasInputNumber) {
     // kad palygintu, ar paskaiciuotas iskeptas kepalu kiekis atitiks ivesta uzsakymo kieki:
-    if (kiekKepyklaIskepsKepalu >= uzsakymasInput) {
+    if (kiekKepyklaIskepsKepalu >= uzsakymasInputNumber) {
       return true;
     } else {
       return false;
     }
 
-    // kai vartotojas irasys reiksmes i nors viena is siu lauku:
+    // patikrinu, ar visi laukai uzpildyti, jei nors vienas laukas tuscias rodys alert:
   } else if (
-    !darbuotojaiInput.value ||
-    !kepalaiInput.value ||
-    !uzsakymasInput.value
+    !darbuotojaiInputNumber ||
+    !kepalaiInputNumber ||
+    !uzsakymasInputNumber
   ) {
-    // kad iskviestu alerta, kuris parodys teksta:
+    // iskvies alerta, kuris parodys teksta:
     alert('Uzpildykite visus laukelius!');
     return;
   }
 
-  // sukuriu div tag'a, kad jame parodytu output reiksmes:
-  const container = document.createElement('div');
-
   // noriu kad p tag'o tekstas butu input reiksme:
-  container.innerHTML = `
-  <p><strong>Kepykla per diena gali pagaminti:</strong> ${kiekKepyklaIskepsKepalu.value} kepalu</p>
-  <p><strong>Reikia pagaminti:</strong> ${uzsakymasInput.value} kepalu</p>
-  <p><strong>Ar spes pagaminti?</strong> ${calculateBtn.value}</p> 
+  resultContainer.innerHTML = `
+  <p><strong>Kepykla per diena gali pagaminti:</strong> ${kiekKepyklaIskepsKepalu} kepalu</p>
+  <p><strong>Reikia pagaminti:</strong> ${uzsakymasInputNumber} kepalu</p>
+  <p><strong>Ar spes pagaminti?</strong> </p>  
   `;
 
-  // noriu kad mano div'as savo viduje turetu output reiksmes:
-  output.append(container);
+  // siuo atveju nebuvo svarbu kas buvo parasyta results dive, todel nebereikia naudoti append
+
+});
+
+// apsirasome kad reset mygtukas veiktu:
+resetBtn.addEventListener('click', function () {
+  darbuotojaiInput.value = '0';
+  kepalaiInput.value = '0';
+  uzsakymasInput.value = '0';
+  resultContainer.innerHTML = 'Kol kas nieko nera';
 });
 
 // KO TRUKSTA:
-// - KIEK KEPYKLA GALI PAGAMINTI
 // - AR TAIP, AR NE
-// RESET MYGTUKO NERA..
+
+// SVARBU! input reiskmes visada yra string'as!!!
+// todel pries darant skaiciavimus reikia su input'ais reikia ju reiksmes pasiversti is STRING i NUMBER
