@@ -29,3 +29,5 @@ function fetchJoke() {
       loader.style.display = 'none';
     });
 }
+
+// paleidome sita funkcija ir kas bus tas bus, o su async mes galime kontroliuoti funkcija, t.y. mes laukiam kol ivyks await ir tik tada einam i tolesni koda..

@@ -53,3 +53,4 @@ getTodos();
 // 1) pending - laukia kol veiksmas bus uzbaigtas.
 // 2) fulfilled - veiksmas baigtas sekmingai.
 // 3) rejected - veiksmas baigtas su klaida.
+

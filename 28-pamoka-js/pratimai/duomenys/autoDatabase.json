@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "rida": "1000",
+    "marke": "BMW",
+    "gamybosMetai": "2025",
+    "kaina": "100000"
+  },
+  {
+    "id": 2,
+    "rida": "100000",
+    "marke": "Opel",
+    "gamybosMetai": "2023",
+    "kaina": "10000"
+  },
+  {
+    "id": 3,
+    "rida": "200000",
+    "marke": "Jeep",
+    "gamybosMetai": "1998",
+    "kaina": "4000"
+  }
+]

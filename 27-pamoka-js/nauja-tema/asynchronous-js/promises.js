@@ -13,7 +13,7 @@
 
 // PVZ
 // Funkcija, kuri imituos kavos uzsakyma:
-// (bet tai yra tik pavyzdys)
+// (bet tai yra tik pavyzdys, kaip sukurti Promise, bet tai nera realus scenarijus)
 const orderCoffee = (coffeeType) => {
   return new Promise((resolve, reject) => { // sis sakinys igalina naudoti .then
     console.log('Uzsakymas yra priimtas..');
