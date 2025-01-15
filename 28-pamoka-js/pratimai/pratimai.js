@@ -135,16 +135,21 @@ function callbackFunkcija(word) {
 
 patikrinkZodzioIlgi(zodynas, callbackFunkcija);
 
-// 2 budas? kaip cia panaudoti sita?
-// - funkcijos patikrinkZodzioIlgi esmė - panaudoti foreach ir kiekvienam masyvo nariui iškviest funkciją koksIlgis(string)
+// 2 budas (pagal lektoriu):
 
-// const dictionary = ['saule', 'dangus', 'menulis'];
+function whatLength(string) {
+  return string.length;
+}
 
-//checkWordLength.forEach((oneWord, dictionary) => {
-// console.log(oneWord);
-//});
+function checkWordLength(dictionary, callbackFunkcija2) {
+  dictionary.forEach((oneWord) => {
+    const length = callbackFunkcija2(oneWord);
+    console.log(`Zodis: ${oneWord}, ilgis: ${length}`);
+  });
+}
 
-// checkWordLength();
+const dictionary = ['automobilis', 'katinas', 'suo'];
+checkWordLength(dictionary, whatLength);
 
 // UZDUOTIS nr.5:
 // Sukurkite funkciją, kuri kaip argumentus priima masyvą, sudarytą iš objektų ir callback funkciją.
@@ -152,13 +157,91 @@ patikrinkZodzioIlgi(zodynas, callbackFunkcija);
 // (tarkim tai automobilis, turintis šias properties: rida, markė, modelis, gamybos metai ir kaina (bet galite susikurti ir savo nuožiūra)) callback funkcijai.
 // Callback funkcija turėtų grąžinti naują objektą, kuriame būtų tik atrinktos objekto properties, tarkim tik markė ir modelis)
 
-async function fetchAutoData() {
-  const response = await fetch('./duomenys/autoDatabase.json');
+// 2 budas is Artiom:
 
-  if (response.status !== 200) {
-    throw new error('Klaida');
+function filterCarData(cars) {
+  return {
+    brand: cars.brand,
+    model: cars.model,
+  };
+}
+
+function iteruotiPerObjektus(masyvas, callback) {
+  masyvas.forEach(function (objektas) {
+    const naujasObjektas = callback(objektas);
+    console.log(naujasObjektas);
+  });
+}
+
+const cars = [
+  {
+    rida: 120000,
+    brand: 'Toyota',
+    year: 2015,
+    model: 'Corolla',
+  },
+
+  {
+    rida: 120000,
+    brand: 'Toyota2',
+    year: 2015,
+    model: 'Corolla2',
+  },
+];
+
+iteruotiPerObjektus(cars, filterCarData);
+
+// UZDUOTIS NR 6:
+// Sukurkite funkciją, kuri priims parametrą isUserLogedIn (reikšmė gali būti true
+//  arba false). Jūsų funkcijos viduje, naudojantis Promise konstruktoriumi, sukursite
+//  naują promise objektą, kuris tikrins ar isUserLogedIn yra true ar false, jeigu
+// paduotas parametras ar false, jūsų sukurtas promise turėtų reject’inti užklausą,
+// kitu atveju - resolvinam ir grąžinam pasirinktą pranešimą. Iškvieskite tą funkciją
+//  naudojantis then ir catch, o gautą rezultatą atvaizduokite konsolėje.
+
+const userStatus = false;
+
+function checkUserLoginStatus(isUserLoggedIn) {
+  return new Promise((resolve, reject) => {
+    if (isUserLoggedIn) {
+      resolve('Naudotojas prisijunges');
+    } else {
+      reject('Naudotojas prisijunges');
+    }
+  });
+}
+
+checkUserLoginStatus(userStatus) // jei cia bus ideta 1 grazins true, jei 0 grazins false, jei tuscias stringas grazins false, jei tuscias objektas {} grazins true
+  .then((message) => {
+    console.log('Sekmingai prisijunges:', message);
+  })
+  .catch((error) => {
+    console.log('Klaida:', error);
+  });
+
+// UZDUOTIS nr 7:
+// Sukurkite async funkciją, kuri priimtų parametrą "age". Funkcijos viduje
+// padarykite patikrinimą ar "age" yra paduotas ir ar jis yra skaičius - priešingu
+// atveju iškvieskite klaidą (throw). Toliau tikrinkite ar amžius yra daugiau nei 18,
+// jeigu taip, grąžinkite, kad “vartotojas gali laikyti vairuotojo egzaminą", priešingu
+// atveju iškvieskite klaidą (throw) ir parašykite, kad "jūsų amžius turi būti daugiau
+// nei 18". Iškvieskite šią funkciją naudojantis then ir catch.
+
+// async pavercia bet kokia funkcija i promise:
+async function checkDriversAge(age) {
+  if (age >= 18) {
+    // resolve
+    return 'Vairuotojas yra pilnametis.';
   } else {
-    return await response.json();
+    // reject
+    throw new Error('Vairuotojas yra nepilnametis.');
   }
 }
 
+checkDriversAge(19)
+  .then((message) => {
+    console.log('Vairuotojas gali vairuoti:', message);
+  })
+  .catch((error) => {
+    console.log('Vairuotojas negali vairuoti:', error);
+  });
