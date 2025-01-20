@@ -1,0 +1,25 @@
+{
+  "students": [
+    {
+      "id": "9afb",
+      "name": "Ruta",
+      "age": 12,
+      "surname": "Mano",
+      "studies": "Design"
+    },
+    {
+      "id": "3f34",
+      "name": "Kuku",
+      "age": 4,
+      "surname": "Suo",
+      "studies": "Sports"
+    },
+    {
+      "id": "9c12",
+      "name": "Vardenis",
+      "surname": "Kaimynas",
+      "age": 333,
+      "studies": "Gardening"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD aplikacija</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Axios biblioteka, padeda dirbti su HTTP requests-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <h1>Studentų sąrašas</h1>
+
+    <table>
+      <thead>
+        <tr>
+         <!-- <th>ID</th> -->
+          <th>Vardas</th>
+          <th>Pavardė</th>
+          <th>Studijų Programa</th>
+          <th>Amžius</th>
+          <th>Veiksmai</th>
+        </tr>
+      </thead>
+
+      <tbody id="student-list">
+        <!-- Cia bus musu studentu duomenys is API-->
+      </tbody>
+
+    </table>
+
+    <!-- Forma su kuria siusim info-->
+    <form id="add-student-form">
+      <h3>Pridėti studentą</h3>
+      <label>Vardas</label>
+      <input type="text" id="name" required /> 
+      <label>Pavardė</label>
+      <input type="text" id="surname" required />  
+      <label>Studijų Programa</label>
+      <input type="text" id="studies" required />
+      <label>Amžius</label>
+      <input type="number" id="age" required />
+      <button type="submit">Pridėti</button>
+    </form>
+
+  </body>
+</html>
