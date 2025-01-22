@@ -1,0 +1,32 @@
+{
+  "reviews": [
+    {
+      "id": "7269",
+      "title": "Harry Potter",
+      "genre": "romanas",
+      "rating": "5",
+      "reviewText": "puiki"
+    },
+    {
+      "id": "a09e",
+      "title": "Narnija",
+      "genre": "pasaka",
+      "rating": "3",
+      "reviewText": "nuostabi"
+    },
+    {
+      "id": "2805",
+      "title": "Knyga",
+      "genre": "romanas",
+      "rating": "5",
+      "reviewText": "dar neskaiciau"
+    },
+    {
+      "id": "1104",
+      "title": "Ziedu Valdovas",
+      "genre": "romanas",
+      "rating": "5",
+      "reviewText": "dar neskaiciau"
+    }
+  ]
+}
